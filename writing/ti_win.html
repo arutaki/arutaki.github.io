@@ -57,6 +57,27 @@
             TI. It is natural to think that DPC points is a good proxy on how well a team would do at TI. After all, they have 
             been doing well for the whole year, why not now?
         </p>
+        <p>
+            To examine this question, I decided to plot teams’ TI achievement with respect to their earned DPC points. I take the data from when DPC started, with 4 TIs from 2018-2022 minus 2020 that was cancelled due to the pandemic. Since the data are not so many, I use Python’s request and Pandas’ get url command to manually extract the tables of DPC points from Liquipedia website. I also used Wikipedia to extract TI achievement because the get_url command does not read the TI table from Liquipedia (or maybe I am wrong? Let me know if you find differently).
+        </p>
+        <p>
+            In my mind, I wanted to have a single table where I have the name of the teams competing, the year they compete in, the DPC points they received, as well as their TI achievement. As any other data analysis project, there are necessary cleanings to do. Firstly, we limit the teams who compete in TIs. Many teams who competed in the DPC did not manage to go to TI, hence I omit them. Secondly, some organizations change name over the years. Just making sure that entries like ‘Thunder Predator’ and ‘Thunder Awaken’ refer to the same team. Also when Forward Gaming played in 2019 under the Newbee banner. Finally, there are also teams who did not earn any DPC points yet managed to go to TI in the older DPC system. In this case, I assigned them with 0 DPC points.
+        </p>
+        <p>
+            Once I got the table, the next step is to determine how to compare the two variables. One glaring issue about DPC and TI is that the system and the total prize change every year. Therefore, we are going to normalize them. The earned DPC points is normalized as  “Relative Points”. A team’s relative points is calculated by dividing their earned DPC points divided by all the DPC points awarded to all teams that year. You can either portray TI achievement with ranks (1st, 2nd, etc.) or the prize wins. Due to tournament system, some teams will share the same rankings (and prize money) which I think add another problem of assigning the appropriate numerical value to the ranks for regression purpose. Therefore, I stick with using the fraction of winning allocated to them out of the total prize pool. I also use a simple linear regression to observe the relationship between them.
+        </p>
+        <p>
+            Based on the simple plot above, the thing that catch my eyes first is how unevenly distributed the data points are. Most of the data points are clumped at the bottom left of the graph with a few of them spread sparsely in the bottom right or upper left of the graph. The uneven spread in the y-axis is easily explained due to the feast of famine nature of the TI winning distribution we talked earlier. The horizontal spread is more interesting. All data points with more than 0.1 relative points show that they are from TI 2018 and TI 2019. These two TIs use the older DPC system. And it seems that the system allows the good teams to dominate the DPC much more significantly compared to the new system. 
+        </p>
+        <p>
+            Let us talk about the relationship then. The red line in the graph is the linear regression of these data points. I got a very small R2 = 0.0004. It shows roughly that the DPC points earned is not correlated with the team’s TI achievement. Interestingly, none of the teams that win TI ranks particularly high during the DPC circuit. The few DPC dominator data points even seem to bomb during TI. The most reasonable explanation would be teams that perform consistently throughout the year lose their competitive advantage during the “final exam”. Whether due to burn out or getting figured out by other teams. For whatever reason, I would still advise no one to not try hard to get into TI due to the risk of not joining the tournament at all. 
+        </p>
+        <p>
+            One caveat in this analysis is that, maybe linear regression is not the right tools in this case. Considering how TI winner earns astronomically larger than most other participants, an “outlier” data is a feature in TI. I considered to do linear regression on the logarithmic value of their earnings. But then it will be meaningless to compare achievements in different years for the value is not normalized. Let me know if you have better suggestion. It is very likely that I have not done my research enough on proper statistical analysis.
+        </p>
+        <p>
+            The code and the notebook is available at my Github and Kaggle. You can see them in my “About” section.
+        </p>
     </article>  
   </body>
 </html>

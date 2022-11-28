@@ -16,9 +16,10 @@
     </header>
     <nav>
         <a href="/">Home</a>
-        <a href="/writing/">Bio</a>
+        <a href="/writing/">Writing</a>
     </nav>      
     <article>
+        <h2>Does Dota 2 DPC point matter?</h2>
         <p>I can say with 100% confidence that Dota 2 is my favorite game ever. I spent more than 2000 hours playing the game 
             before I realized that not playing the game 8 hours nonstop do wonder to my perpetual back pain. Now that my primary 
             computer is a Mac, I somehow feel bad about abusing my keyboard that stops me from PC gaming altogether. Despite all 
@@ -70,7 +71,7 @@
             Based on the simple plot above, the thing that catch my eyes first is how unevenly distributed the data points are. Most of the data points are clumped at the bottom left of the graph with a few of them spread sparsely in the bottom right or upper left of the graph. The uneven spread in the y-axis is easily explained due to the feast of famine nature of the TI winning distribution we talked earlier. The horizontal spread is more interesting. All data points with more than 0.1 relative points show that they are from TI 2018 and TI 2019. These two TIs use the older DPC system. And it seems that the system allows the good teams to dominate the DPC much more significantly compared to the new system. 
         </p>
         <p>
-            Let us talk about the relationship then. The red line in the graph is the linear regression of these data points. I got a very small R2 = 0.0004. It shows roughly that the DPC points earned is not correlated with the team’s TI achievement. Interestingly, none of the teams that win TI ranks particularly high during the DPC circuit. The few DPC dominator data points even seem to bomb during TI. The most reasonable explanation would be teams that perform consistently throughout the year lose their competitive advantage during the “final exam”. Whether due to burn out or getting figured out by other teams. For whatever reason, I would still advise no one to not try hard to get into TI due to the risk of not joining the tournament at all. 
+            Let us talk about the relationship then. The red line in the graph is the linear regression of these data points. I got a very small R<sup>2</sup> = 0.0004. It shows roughly that the DPC points earned is not correlated with the team’s TI achievement. Interestingly, none of the teams that win TI ranks particularly high during the DPC circuit. The few DPC dominator data points even seem to bomb during TI. The most reasonable explanation would be teams that perform consistently throughout the year lose their competitive advantage during the “final exam”. Whether due to burn out or getting figured out by other teams. For whatever reason, I would still advise no one to not try hard to get into TI due to the risk of not joining the tournament at all. 
         </p>
         <p>
             One caveat in this analysis is that, maybe linear regression is not the right tools in this case. Considering how TI winner earns astronomically larger than most other participants, an “outlier” data is a feature in TI. I considered to do linear regression on the logarithmic value of their earnings. But then it will be meaningless to compare achievements in different years for the value is not normalized. Let me know if you have better suggestion. It is very likely that I have not done my research enough on proper statistical analysis.

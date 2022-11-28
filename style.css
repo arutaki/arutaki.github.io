@@ -87,3 +87,10 @@ body {
     margin: 1em 0;
     padding: 0;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
